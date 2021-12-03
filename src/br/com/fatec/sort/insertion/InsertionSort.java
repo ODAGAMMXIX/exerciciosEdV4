@@ -4,16 +4,21 @@ import br.com.fatec.sort.utils.Utils;
 
 public class InsertionSort {
     public static void sort(int[] arr) {
-        int counter, traversingIndex, key;
+        int counter, shifter, key;
 
-        for (counter = 1; counter < arr.length; counter++) {
-            key = arr[counter];
-            traversingIndex = counter - 1;
-            while (traversingIndex >= 0 && arr[traversingIndex] > key) {
-                arr[traversingIndex+1] = arr[traversingIndex];
-                traversingIndex = traversingIndex - 1;
+        for (counter = 1; counter < arr.length; counter++) { //COUNTADOR < TAMANHO DA LISTA
+            key = arr[counter]; // SUJEITO 
+            shifter = counter - 1; //SUBLISTA 
+            System.out.println("SUJEITO=MANO NA VIATURA="+key+"  ENCAMINHAR PRA DELEGACIA="+shifter);
+            while (shifter >= 0 && arr[shifter] > key) {//percorre a lista ATÉ DEIXAR DE SER MENOR
+                arr[shifter+1] = arr[shifter]; // INDIVÍDUO EMPURRADO PRA FORA DA SUBLISTA
+                System.out.println("INDIVÍDUO EMPURRADO PRA FORA DA SUBLISTA= "+arr[shifter+1]);
+                System.out.println("LISTA ORDENADA NESSA RODADA: ");
+                Utils.printArray(arr);
+                System.out.println("==========================");
+                shifter = shifter - 1;
             }
-            arr[traversingIndex + 1] = key;
+            arr[shifter + 1] = key;
         }
     }
     public static void main(String[] args) {

@@ -8,6 +8,15 @@ public class Utils {
         }
         System.out.println("]");
     }
+
+    public static void printArrayRange(int arr[], int start, int end){
+        System.out.print("[");
+        for (int i = start; i < end; i++) {
+            System.out.print(arr[i]+ ",");
+        }
+        System.out.println("]");
+    }
+
     public static void swap(int[] arr, int index1, int index2) {
         int temp = arr[index1];
         arr[index1] = arr[index2];

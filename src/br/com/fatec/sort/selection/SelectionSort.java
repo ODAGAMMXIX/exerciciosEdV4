@@ -6,25 +6,25 @@ import static br.com.fatec.sort.utils.Utils.swap;
 
 public class SelectionSort {
     static void sort(int arr[]) {
-//        Initialize 3 new variables. Counter, Traversing index, Minimum index;
-        int counter, traversingIndex, minimumIndex;
-//        Set Counter equal to 0, minimum index equal to counter, and Traversing index equal to 1 plus the Counter;
-        for (counter = 0; counter < arr.length; counter++) {
-            minimumIndex = counter;
-            for (traversingIndex = counter + 1; traversingIndex < arr.length ; traversingIndex++) {
-//                Search the list from the Counter through the end of the data using our Traversing Index,
-//                and compare every element we pass over to the value stored at the minimum index;
 
-                if (arr[traversingIndex] < arr[minimumIndex]) {
-//                    If the value is less than the value stored at the minimum index,
-//                    We re-set minimum index to whatever our Traversing Index is;
-                    minimumIndex = traversingIndex;
+        int Prisao, Polisssa, ManoNaViatura; 
+
+        for (Prisao = 0; Prisao < arr.length; Prisao++) {// COMEÇA EM ZERO!!!
+            ManoNaViatura = Prisao;  
+            System.out.println("POSIÇÃO QUE SERÁ COMPARADA COM O RESTO DA LISTA= "+ManoNaViatura); // VARREDURA DAS PRISÕES DA LISTA
+            for (Polisssa = Prisao + 1; Polisssa < arr.length ; Polisssa++) { //ENCONTRA O MANO IDEAL PRA ESSA PRISÃO
+            
+                if (arr[Polisssa] < arr[ManoNaViatura]) {// QUEM É O MANO IDEAL PRA ESSA PRISÃO?
+                    System.out.println("? "+ arr[Polisssa] + " É MENOR DO QUE "+arr[ManoNaViatura]+"?");
+                    ManoNaViatura = Polisssa;
+                    System.out.println("O NOVO MANO IDEAL PRA ESSA PRISÃO (VALOR MENOR) É = "+arr[ManoNaViatura]);
                 }
             }
-//            After traversing the whole list, we swap the values counting at the Counter and the Minimum Index;
-            swap(arr, counter, minimumIndex);
+            System.out.println("DEPOIS DE COMPARAR COM O ESTO DA LISTA, TROQUE: ");
+            swap(arr, Prisao, ManoNaViatura); // TROCA MANO IDEAL PRA ESSA PRISÃO = VALOR MENOR
+            Utils.printArray(arr);
+            System.out.println("================================");
         }
-
     }
 
     public static void main(String[] args) {
